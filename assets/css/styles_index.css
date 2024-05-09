@@ -1,0 +1,72 @@
+/* Estilos básicos para todo el documento */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, rgb(52, 75, 223), rgb(61, 139, 240)); /* Degradado de azul oscuro a azul claro */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Estilos del contenedor del formulario */
+.login-container {
+    background-color: #f8f9fb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+
+/* Estilos de los campos del formulario y el botón */
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 40px); /* Ajuste del ancho para añadir espacio */
+    padding: 8px;
+    padding-right: 20px; /* Añadir relleno adicional a la derecha */
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+}
+
+
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 15px 20px; /* Aumentado para un botón más grande */
+    width: 50%; /* Ancho relativo al contenedor padre */
+    font-size: 19px; /* Tamaño de fuente más grande */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0000ff;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 10px;
+    }
+}

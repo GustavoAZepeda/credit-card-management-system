@@ -4,47 +4,55 @@
     <title>Detalles de la Cuenta</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
+
 <body class="is-preload">
-    <!-- Sidebar -->
+
     <div id="sidebar">
-        <h1 id="logo"><a href="#">Inicio</a></h1>
+        <h1 id="logo"><a href="generalDetails.html">Inicio</a></h1>
         <nav id="nav">
             <ul>
-                <li><a href="#generalDetails">Detalles de la Cuenta</a></li>
-                <li><a href="#nav/creditLimit">Tarjeta de Crédito</a></li>
-                <li><a href="#movements">Consulta de Movimientos</a></li>
-                <li><a href="#creditLimit">Aumento de Límite de Crédito</a></li>
-                <li><a href="#statements">Estados de Cuenta</a></li>
-                <li><a href="#notifications">Notificaciones</a></li>
-                <li><a href="#reminders">Recordatorios</a></li>
+                <li><a href="generalDetails.html">Detalles de la Cuenta</a></li>
+                <li class="submenu"><a href="creditCard.html">Tarjeta de Crédito</a></li>
+                    <ul>
+                        <li><a href="#">Bloqueo/Desbloqueo</a></li>
+                        <li><a href="#">Cambiar de Pin</a></li>
+                    </ul>
+                <li><a href="movements.html">Consulta de Movimientos</a></li>
+                <li><a href="creditLimit.html">Aumento de Límite de Crédito</a></li>
+                <li><a href="statements.html">Estados de Cuenta</a></li>
+                <li><a href="notifications.html">Notificaciones</a></li>
+                <li><a href="reminders.html">Recordatorios</a></li>
+                <li><a href="profile.html">Perfil de Usuario</a></li>
             </ul>
         </nav>
     </div>
 
-    <!-- Content -->
-    <div id="content">	
-        <div class="inner">
-            <!-- General Details -->
-            <section id="generalDetails" class="box post">
-                <header>
-                    <h2>Detalles Generales</h2>
-						<ul>
-							<li>Saldo disponible Q5000.00</li>
-							<li>Pago mínimo Q200.00</li>
-							<li>Pago de contado Q5000.00</li>
-							<li>Saldo al día Q4500.00</li>
-							<li>Fecha de pago 7 de cada mes</li>
-							<li>Fecha de corte 13 de cada mes</li>
-							<li>Interés 6.1%</li>
-						</ul>
-						<button>Pagar Tarjeta</button>
-                </header>
-            </section>
 
-            <!-- Más secciones aquí... -->
-        </div>
-    </div>
-</body>
+    <div id="content">
+        <div class="inner">
+                    <header>
+                        <h2>Detalles Generales</h2>
+                    </header>
+                    <ul>
+                        <li>Saldo disponible Q5000.00</li>
+                        <li>Pago mínimo Q200.00</li>
+                        <li>Pago de contado Q5000.00</li>
+                        <li>Saldo al día Q4500.00</li>
+                        <li>Fecha de pago 7 de cada mes</li>
+                        <li>Fecha de corte 13 de cada mes</li>
+                        <li>Interés 6.1%</li>
+                    </ul>
+                    <button>Pagar Tarjeta</button>
+                </article>
+        </div>    
+
+    <script src="..//assets/js/jquery.min.js"></script>
+    <script src="..//assets/js/browser.min.js"></script>
+    <script src="..//assets/js/breakpoints.min.js"></script>
+    <script src="..//assets/js/util.js"></script>
+    <script src="..//assets/js/main.js"></script>
+    </body>
+
 </html>

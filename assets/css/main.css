@@ -72,8 +72,6 @@ input, select, textarea {
 	appearance: none;
 }
 
-
-
 /* Basic */
 
 	html {
@@ -1681,7 +1679,6 @@ input, select, textarea {
 	form textarea {
 		display: block;
 		border-radius: 0.4em;
-		-webkit-appearance: none;
 		border: solid 1px #ddd;
 		padding: 0.5em 0.75em;
 		width: 100%;
@@ -3011,3 +3008,26 @@ input, select, textarea {
 			}
 
 	}
+/* Estilos para el submenú del sidebar */
+#nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav ul ul {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: white; /* Ajusta el color de fondo según tu diseño */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Sombras para un mejor efecto visual */
+    z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
+}
+
+#nav ul li:hover > ul {
+    display: block;
+}

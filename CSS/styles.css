@@ -1,7 +1,7 @@
 /* Estilos básicos para todo el documento */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, rgb(52, 75, 223), rgb(61, 139, 240)); /* Degradado de azul oscuro a azul claro */
+    background: #003366; /* Degradado de azul oscuro a azul claro */
     color: #333;
     margin: 0;
     padding: 0;

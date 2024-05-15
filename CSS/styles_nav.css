@@ -1,0 +1,142 @@
+/* Estilos básicos */
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Remueve los puntos de la lista */
+}
+
+li {
+    position: relative; /* Posición relativa para los elementos del menú */
+}
+
+#menu-container { /* Asume que tu menú está dentro de un contenedor con este ID */
+    position: relative;
+    overflow: visible; /* Permite que los contenidos se extiendan fuera del contenedor */
+}
+
+/* Sidebar styling */
+#sidebar {
+    position: fixed; /* Mantiene la barra lateral fija en su lugar */
+    top: 0;
+    left: 0;
+    width: 250px; /* o el ancho que prefieras para la barra */
+    height: 100vh; /* Altura completa de la ventana de visualización */
+    background-color: #003366; /* Color de fondo */
+    color: white;
+    
+}
+
+#content {
+    margin-left: 250px; /* Debe ser igual o mayor al ancho de la barra lateral */
+    padding: 20px; /* Espaciado para el contenido */
+}
+
+/* Navigation links */
+#nav a {
+    color: white;
+    padding: 12px 20px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+#nav a:hover {
+    background-color: #0055A4; /* Un azul ligeramente más claro */
+    box-shadow: inset 0 0 10px #00000050;
+}
+
+/* Logo style */
+#logo a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    background: #001C33; /* Un azul más oscuro para el logo */
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Hide submenus by default and style them */
+.submenu ul {
+    left: 100%; /* Mueve el submenú a la derecha del menú principal */
+    top: 0;
+    min-width: 160px; /* Ajusta según necesidad */
+    background-color: #003366; /* Fondo claro para los submenús */
+}
+
+
+.submenu-items li {
+    padding: 5px 10px;
+    
+}
+
+/* Style for submenu links */
+.submenu ul a {
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    overflow: hidden; /* Oculta texto que desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+    display: block;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        height: auto; /* La altura se ajusta al contenido de la barra */
+        position: relative; /* La barra ya no es fija en móviles */
+    }
+
+    #content {
+        margin-left: 0; /* El contenido ocupa toda la pantalla en móviles */
+    }
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #000; /* Más oscuro para mejor contraste */
+    font-weight: bold; /* Negrita para enfatizar los montos */
+    margin: 5px 0;
+}
+
+.card p span { /* Nuevo span para los montos */
+    float: right; /* Alineación a la derecha */
+    font-family: 'Courier New', monospace; /* Fuente monoespaciada para los números */
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

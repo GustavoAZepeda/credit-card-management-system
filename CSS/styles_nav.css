@@ -190,3 +190,72 @@ input:checked + .slider:before {
 .slider.round {
     border-radius: 34px;
 }
+
+/* Estilos para el formulario de cambio de PIN */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* Estilos específicos para las notificaciones */
+
+#notificationFilterForm {
+    margin-bottom: 20px;
+}
+
+#notificationFilterForm .form-group {
+    margin-bottom: 10px;
+}
+
+#notificationFilterForm input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#notificationFilterForm label {
+    margin-right: 10px;
+    color: #333;
+}
+
+#notificationList ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#notificationList li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#notificationList li.unread {
+    font-weight: bold;
+    background-color: #f0f8ff;
+}
+
+#notificationList li span.amount {
+    float: right;
+    font-family: 'Courier New', monospace;
+    color: #007bff;
+}

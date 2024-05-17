@@ -259,3 +259,363 @@ input:checked + .slider:before {
     font-family: 'Courier New', monospace;
     color: #007bff;
 }
+
+/* Estilos para el formulario de filtro */
+.filter-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-form .form-group {
+    margin-bottom: 15px;
+}
+
+.filter-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.filter-form select, 
+.filter-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.filter-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.filter-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para la lista de movimientos */
+.movements-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.movements-list .movement-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.movements-list .movement-item .date,
+.movements-list .movement-item .description,
+.movements-list .movement-item .amount {
+    flex: 1;
+}
+
+.movements-list .movement-item .amount.debit {
+    color: #e74c3c; /* Rojo para débitos */
+}
+
+.movements-list .movement-item .amount.credit {
+    color: #2ecc71; /* Verde para créditos */
+}
+
+/* Estilos para el formulario de perfil */
+.profile-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.profile-form .form-group {
+    margin-bottom: 15px;
+}
+
+.profile-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.profile-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.profile-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el formulario de consulta de estado de cuenta */
+.statement-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.statement-form .form-group {
+    margin-bottom: 15px;
+}
+
+.statement-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.statement-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.statement-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.statement-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los resultados de la consulta */
+#statementResults {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#statementResults table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#statementResults th, #statementResults td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#statementResults th {
+    background-color: #007bff;
+    color: white;
+}
+
+#statementResults td {
+    text-align: left;
+}
+
+/* Estilos para el formulario de consulta de movimientos */
+.movements-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.movements-form .form-group {
+    margin-bottom: 15px;
+}
+
+.movements-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.movements-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.movements-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.movements-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los resultados de la consulta */
+#movementsResults {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#movementsResults table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#movementsResults th, #movementsResults td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#movementsResults th {
+    background-color: #007bff;
+    color: white;
+}
+
+#movementsResults td {
+    text-align: left;
+}
+
+/* Estilos para el formulario de consulta de estados de cuenta */
+.statements-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.statements-form .form-group {
+    margin-bottom: 15px;
+}
+
+.statements-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.statements-form select,
+.statements-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.statements-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.statements-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los resultados de la consulta */
+#statementsResults {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#statementsResults table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#statementsResults th, #statementsResults td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#statementsResults th {
+    background-color: #007bff;
+    color: white;
+}
+
+#statementsResults td {
+    text-align: left;
+}
+
+/* Estilos para el formulario de recordatorio */
+.reminder-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.reminder-form .form-group {
+    margin-bottom: 15px;
+}
+
+.reminder-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.reminder-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.reminder-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.reminder-form button:hover {
+    background-color: #0056b3;
+}

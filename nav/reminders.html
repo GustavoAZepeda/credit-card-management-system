@@ -29,6 +29,29 @@
             </ul>
         </nav>
     </div>
+
+    <div id="content">
+        <h2>Configurar Recordatorio de Pago</h2>
+        <div class="reminder-form">
+            <form id="reminderForm">
+                <div class="form-group">
+                    <label for="reminderEmail">Correo Electrónico para Recordatorio:</label>
+                    <input type="email" id="reminderEmail" name="reminderEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminderPhone">Número de Teléfono para Recordatorio:</label>
+                    <input type="tel" id="reminderPhone" name="reminderPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminderDate">Fecha de Vencimiento de Pago:</label>
+                    <input type="date" id="reminderDate" name="reminderDate" required>
+                </div>
+                <button type="submit" class="btn">Guardar Recordatorio</button>
+            </form>
+        </div>
+    </div>
+
     <script src="/js/menu.js"></script>
+    <script src="/js/reminder.js"></script>
 </body>
 </html>

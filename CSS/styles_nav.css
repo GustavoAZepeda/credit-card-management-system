@@ -75,6 +75,10 @@ li {
     background-color: #003366; /* Fondo claro para los submenús */
 }
 
+.submenu-items{
+    display: none;
+}
+
 
 .submenu-items li {
     padding: 5px 10px;

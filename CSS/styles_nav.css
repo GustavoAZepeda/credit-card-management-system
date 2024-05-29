@@ -623,3 +623,16 @@ input:checked + .slider:before {
 .reminder-form button:hover {
     background-color: #0056b3;
 }
+
+.favicon-wrapper {
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.favicon-wrapper img {
+    width: 100%;
+    height: auto;
+}

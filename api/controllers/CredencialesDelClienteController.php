@@ -2,7 +2,7 @@
 namespace ProyectoTC\Controllers;
 
 require_once '../db.php';
-require_once '../models/CredencialesDelCliente.php';
+require_once '../models/CredencialCliente.php';
 
 use ProyectoTC\Models\CredencialesDelCliente;
 

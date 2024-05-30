@@ -2,7 +2,7 @@
 namespace ProyectoTC\Controllers;
 
 require_once '../db.php';
-require_once '../models/DetalleDeTarjeta.php';
+require_once '../models/DetalleTarjeta.php';
 
 use ProyectoTC\Models\DetalleDeTarjeta;
 

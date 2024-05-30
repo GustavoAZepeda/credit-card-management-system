@@ -15,10 +15,6 @@ require_once '../controllers/SesionController.php';
 require_once '../controllers/TarjetaController.php';
 require_once '../controllers/TransaccionController.php';
 
-/* The `use` statements in PHP are used to import namespaces into the current script. In this case, the
-code is importing various controller classes from the `ProyectoTC\Controllers` namespace. By using
-these `use` statements, the fully qualified class names can be referenced by their short names in
-the script, making the code more readable and concise. */
 use ProyectoTC\Controllers\ClienteController;
 use ProyectoTC\Controllers\ContactoDelClienteController;
 use ProyectoTC\Controllers\CredencialesDelClienteController;
@@ -33,10 +29,6 @@ use ProyectoTC\Controllers\TransaccionController;
 
 $pdo = new PDO('mysql:host=localhost;dbname=Proyecto_TC', 'root', 'Patineta1@$');
 
-/* The code you provided is creating instances of various controller classes by passing a PDO object as
-a parameter to their constructors. Each controller class is responsible for handling specific
-operations related to different entities in the API. Here's a breakdown of what each controller is
-responsible for: */
 $clienteController = new ClienteController($pdo);
 $contactoDelClienteController = new ContactoDelClienteController($pdo);
 $credencialesDelClienteController = new CredencialesDelClienteController($pdo);

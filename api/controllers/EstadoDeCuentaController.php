@@ -2,7 +2,7 @@
 namespace ProyectoTC\Controllers;
 
 require_once '../db.php';
-require_once '../models/EstadoDeCuenta.php';
+require_once '../models/EstadoCuenta.php';
 
 use ProyectoTC\Models\EstadoDeCuenta;
 

@@ -2,7 +2,7 @@
 namespace ProyectoTC\Controllers;
 
 require_once '../db.php';
-require_once '../models/CuentaBancaria.php';
+require_once '../models/Cuenta.php';
 
 use ProyectoTC\Models\CuentaBancaria;
 

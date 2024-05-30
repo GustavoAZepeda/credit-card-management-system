@@ -1,4 +1,6 @@
 <?php
+namespace ProyectoTC\Controllers;
+
 require_once '../db.php';
 require_once '../models/Cliente.php';
 

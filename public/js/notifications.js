@@ -1,75 +1,67 @@
-document.addEventListener('DOMContentLoaded', function() {
-    loadNotifications();
+document.getElementById('filterForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-    var toggleButtons = document.querySelectorAll('.submenu .toggle');
-    toggleButtons.forEach(function(button) {
-        button.addEventListener('click', function(event) {
-            event.preventDefault();  // Evita que el navegador siga el enlace
+    const search = document.getElementById('search').value;
+    const filter = document.querySelector('input[name="filter"]:checked').value;
+    const token = localStorage.getItem('token');
 
-            var submenu = this.nextElementSibling;  // Selecciona el submenú asociado
-
-            // Cierra todos los submenús abiertos
-            var allSubmenus = document.querySelectorAll('.submenu-items');
-            allSubmenus.forEach(function(sub) {
-                if (sub !== submenu) {
-                    sub.style.display = 'none';
-                }
-            });
-
-            // Muestra u oculta el submenú seleccionado
-            if (submenu.style.display === "block") {
-                submenu.style.display = "none";  // Oculta el submenú si está visible
-            } else {
-                submenu.style.display = "block";  // Muestra el submenú si está oculto
+    try {
+        const response = await fetch(`http://localhost:3000/api/notificaciones?search=${search}&filter=${filter}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
-    });
+
+        if (!response.ok) {
+            throw new Error('Error al obtener las notificaciones');
+        }
+
+        const notificaciones = await response.json();
+        displayNotificaciones(notificaciones);
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error al obtener las notificaciones');
+    }
 });
 
-function loadNotifications() {
-    // Aquí puedes cargar las notificaciones desde tu base de datos o API
-    const notifications = [
-        { id: 1, text: "Compra en Supermercado X", amount: "Q150.00", place: "Supermercado X", unread: true },
-        { id: 2, text: "Pago de Servicio de Internet", amount: "Q200.00", place: "Internet S.A.", unread: false },
-        { id: 3, text: "Retiro de Cajero Automático", amount: "Q500.00", place: "Cajero ABC", unread: true },
-        // Agrega más notificaciones según sea necesario
-    ];
+function displayNotificaciones(notificaciones) {
+    const resultsDiv = document.getElementById('notificationsResults');
+    resultsDiv.innerHTML = '';
 
-    const notificationList = document.getElementById('notifications');
-    notificationList.innerHTML = '';
-    
-    notifications.forEach(notification => {
-        const li = document.createElement('li');
-        li.className = notification.unread ? 'unread' : '';
-        li.innerHTML = `
-            <span class="text">${notification.text} - ${notification.place}</span>
-            <span class="amount">${notification.amount}</span>
-        `;
-        notificationList.appendChild(li);
-    });
-}
-
-function filterNotifications() {
-    const searchTerm = document.getElementById('searchTerm').value.toLowerCase();
-    const filter = document.querySelector('input[name="filter"]:checked').value;
-
-    const notificationList = document.getElementById('notifications');
-    const notifications = notificationList.getElementsByTagName('li');
-    
-    for (let i = 0; i < notifications.length; i++) {
-        const text = notifications[i].getElementsByClassName('text')[0].innerText.toLowerCase();
-        const isUnread = notifications[i].classList.contains('unread');
-
-        let display = true;
-
-        if (searchTerm && !text.includes(searchTerm)) {
-            display = false;
-        }
-
-        if (filter === 'unread' && !isUnread) {
-            display = false;
-        }
-
-        notifications[i].style.display = display ? '' : 'none';
+    if (notificaciones.length === 0) {
+        resultsDiv.textContent = 'No se encontraron notificaciones para los criterios seleccionados.';
+        return;
     }
+
+    const table = document.createElement('table');
+    table.classList.add('table'); // Asignar clase para estilos CSS
+
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+
+    thead.innerHTML = `
+        <tr>
+            <th>Descripción</th>
+            <th>Monto</th>
+            <th>Fecha</th>
+            <th>Leída</th>
+        </tr>
+    `;
+
+    notificaciones.forEach(notificacion => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${notificacion.Descripcion}</td>
+            <td>${notificacion.Monto}</td>
+            <td>${new Date(notificacion.FechaHora).toLocaleString()}</td>
+            <td>${notificacion.Leida ? 'Sí' : 'No'}</td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    resultsDiv.appendChild(table);
 }

@@ -3,7 +3,7 @@
 Este repositorio contiene el código del proyecto para un sistema de gestión de tarjetas de crédito diseñado para bancos. El proyecto incluye el desarrollo de una serie de APIs REST que permiten a los usuarios gestionar sus tarjetas de crédito de manera segura y eficiente. Las funcionalidades cubren desde la realización de pagos y consultas de saldo hasta la administración de seguridad y prevención de fraudes.
 
 ## Tecnologías Utilizadas
-- **PHP**: Lógica del servidor y APIs REST.
+- **Node JS**: Lógica del servidor y APIs REST.
 - **HTML/CSS**: Frontend y diseño de interfaces.
 - **SQL**: Gestión de bases de datos.
 - **DevOps**: Prácticas de desarrollo y operaciones para despliegue y mantenimiento.
@@ -15,42 +15,46 @@ Este proyecto es desarrollado utilizando prácticas de DevOps, asegurando un enf
 credit-card-management-system
 ├─ api
 │  ├─ controllers
-│  │  ├─ ClienteController.php
-│  │  ├─ ContactoClienteController.php
-│  │  ├─ CredencialesClienteController.php
-│  │  ├─ CuentaBancariaController.php
-│  │  ├─ DetalleDeTarjetaController.php
-│  │  ├─ EstadoDeCuentaController.php
-│  │  ├─ NotificacionController.php
-│  │  ├─ PagoController.php
-│  │  ├─ SesionController.php
-│  │  ├─ TarjetaController.php
-│  │  └─ TransaccionController.php
-│  ├─ db.php
+│  │  ├─ authController.js
+│  │  ├─ clienteController.js
+│  │  ├─ contactoController.js
+│  │  ├─ credencialController.js
+│  │  ├─ cuentaController.js
+│  │  ├─ detalleTarjetaController.js
+│  │  ├─ estadoCuentaController.js
+│  │  ├─ notificacionController.js
+│  │  ├─ pagoController.js
+│  │  ├─ sesionController.js
+│  │  ├─ tarjetaController.js
+│  │  └─ transaccionController.js
 │  ├─ models
-│  │  ├─ Cliente.php
-│  │  ├─ ContactoCliente.php
-│  │  ├─ CredencialCliente.php
-│  │  ├─ Cuenta.php
-│  │  ├─ DetalleTarjeta.php
-│  │  ├─ EstadoCuenta.php
-│  │  ├─ Notificacion.php
-│  │  ├─ Pago.php
-│  │  ├─ Sesion.php
-│  │  ├─ Tarjeta.php
-│  │  └─ Transaccion.php
+│  │  ├─ clienteModel.js
+│  │  ├─ contactoModel.js
+│  │  ├─ credencialModel.js
+│  │  ├─ cuentaModel.js
+│  │  ├─ database.js
+│  │  ├─ detalleTarjetaModel.js
+│  │  ├─ estadoCuentaModel.js
+│  │  ├─ notificacionModel.js
+│  │  ├─ pagoModel.js
+│  │  ├─ sesionModel.js
+│  │  ├─ tarjetaModel.js
+│  │  └─ transaccionModel.js
 │  └─ routes
-│     └─ index.php
-├─ LICENSE.txt
+│     ├─ authRoutes.js
+│     └─ creditCardRoutes.js
+├─ app.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
 ├─ public
 │  ├─ assets
 │  │  └─ logo.ico
 │  ├─ CSS
 │  │  ├─ styles.css
 │  │  └─ styles_nav.css
-│  ├─ index.html
 │  ├─ js
-│  │  ├─ main.js
+│  │  ├─ login.js
 │  │  ├─ menu.js
 │  │  ├─ movements.js
 │  │  ├─ notifications.js

@@ -1,21 +1,65 @@
-document.getElementById('movementsForm').addEventListener('submit', function(e) {
+document.getElementById('movementsForm').addEventListener('submit', async function(e) {
     e.preventDefault();
+
     const startDate = document.getElementById('startDate').value;
     const endDate = document.getElementById('endDate').value;
+    const token = localStorage.getItem('token');
 
-    console.log('Consulta de movimientos:', { startDate, endDate });
+    try {
+        const response = await fetch(`http://localhost:3000/api/transacciones?startDate=${startDate}&endDate=${endDate}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
 
-    const results = [
-        { date: '2024-05-01', description: 'Compra en tienda', amount: '-100.00' },
-        { date: '2024-05-02', description: 'Pago recibido', amount: '200.00' }
-    ];
+        if (!response.ok) {
+            throw new Error('Error al obtener las transacciones');
+        }
 
-    const movementsResults = document.getElementById('movementsResults');
-    let html = '<table>';
-    html += '<tr><th>Fecha</th><th>Descripción</th><th>Monto</th></tr>';
-    results.forEach(result => {
-        html += `<tr><td>${result.date}</td><td>${result.description}</td><td>${result.amount}</td></tr>`;
-    });
-    html += '</table>';
-    movementsResults.innerHTML = html;
+        const transacciones = await response.json();
+        displayTransacciones(transacciones);
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error al obtener las transacciones');
+    }
 });
+
+function displayTransacciones(transacciones) {
+    const resultsDiv = document.getElementById('movementsResults');
+    resultsDiv.innerHTML = '';
+
+    if (transacciones.length === 0) {
+        resultsDiv.textContent = 'No se encontraron transacciones para el rango de fechas seleccionado.';
+        return;
+    }
+
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+
+    thead.innerHTML = `
+        <tr>
+            <th>FechaHora</th>
+            <th>Monto</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+        </tr>
+    `;
+
+    transacciones.forEach(transaccion => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${new Date(transaccion.FechaHora).toLocaleString()}</td>
+            <td>${transaccion.Monto}</td>
+            <td>${transaccion.Tipo}</td>
+            <td>${transaccion.Descripción}</td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    resultsDiv.appendChild(table);
+}
